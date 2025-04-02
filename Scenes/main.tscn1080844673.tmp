@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://dbe7i0duf546i"]
 
-[ext_resource type="Script" uid="uid://e8sde2nguss2" path="res://Scripts/Main.gd" id="1_r150o"]
+[ext_resource type="Script" uid="uid://e8sde2nguss2" path="res://Scripts/Main.gd" id="1_jjgbg"]
 
 [node name="Main" type="Node"]
-script = ExtResource("1_r150o")
+script = ExtResource("1_jjgbg")
 
 [node name="Deck" type="Node2D" parent="."]

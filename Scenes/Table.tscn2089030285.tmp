@@ -36,13 +36,3 @@ offset_top = 494.0
 offset_right = 23.672
 offset_bottom = 501.048
 script = ExtResource("5_2kndx")
-slot = 1
-
-[node name="Button" type="Button" parent="."]
-offset_left = 15.0
-offset_top = 424.0
-offset_right = 153.0
-offset_bottom = 463.0
-text = "CANCEL"
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

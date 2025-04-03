@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfs71qfumdpyl"]
+
+[ext_resource type="Script" uid="uid://r5eq3xpxrj40" path="res://Scripts/Summon.gd" id="1_jl00y"]
+
+[node name="Summon" type="Button"]
+anchors_preset = -1
+anchor_right = 0.114
+anchor_bottom = 0.199
+offset_left = 19.0
+offset_top = 496.0
+offset_right = 24.672
+offset_bottom = 503.048
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+text = "BREAK"
+script = ExtResource("1_jl00y")

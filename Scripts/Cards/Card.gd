@@ -10,7 +10,7 @@ extends Button
 
 #Set up variables
 @export var slot = 1
-var life = 10 
+var life = 1
 var type = "monster"
 func _ready() -> void:
 	#Display Variables

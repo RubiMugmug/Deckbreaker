@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cro8j5uk8c1sn"]
 
 [ext_resource type="Script" uid="uid://gwbqxe0725xd" path="res://Scripts/Cards/Card.gd" id="1_3p273"]
-[ext_resource type="Texture2D" uid="uid://c1cp03hdajf6o" path="res://Sprites/Card_Blank.png" id="1_pnb5n"]
+[ext_resource type="Texture2D" uid="uid://bwact7wqwab0j" path="res://Sprites/Cards/Blank.png" id="2_3p273"]
 
 [node name="Card" type="Button"]
 self_modulate = Color(0, 0, 0, 1)
@@ -19,11 +19,4 @@ script = ExtResource("1_3p273")
 [node name="CardSprite" type="Sprite2D" parent="."]
 position = Vector2(75, 100)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_pnb5n")
-
-[node name="LifeLabel" type="Label" parent="."]
-modulate = Color(0, 0, 0, 1)
-offset_left = 110.0
-offset_right = 150.0
-offset_bottom = 23.0
-text = "test"
+texture = ExtResource("2_3p273")

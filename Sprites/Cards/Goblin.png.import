@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1cp03hdajf6o"
-path="res://.godot/imported/Card_Blank.png-ca2166260ce5a9ec5656171cf4c25421.ctex"
+uid="uid://cloun8hbm1nh4"
+path="res://.godot/imported/Goblin.png-f3b6a5d97de8caa5daab15e1238c4d8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Card_Blank.png"
-dest_files=["res://.godot/imported/Card_Blank.png-ca2166260ce5a9ec5656171cf4c25421.ctex"]
+source_file="res://Sprites/Cards/Goblin.png"
+dest_files=["res://.godot/imported/Goblin.png-f3b6a5d97de8caa5daab15e1238c4d8e.ctex"]
 
 [params]
 

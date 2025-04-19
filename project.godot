@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Deckbreaker"
-run/main_scene="uid://dbe7i0duf546i"
+run/main_scene="uid://db7e2qsk6nly7"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

@@ -1,4 +1,4 @@
-extends Button
+extends Sprite2D
 
 #This is a general card node.
 #A card is a button with sprites and labels.
@@ -11,14 +11,14 @@ var imagepath = "Blank.png"
 #Method to change image
 func update_image() -> void:
 	imagepath = str("res://Sprites/Cards/",cardname, ".png")
-	$CardSprite.texture = load(imagepath)
+	self.texture = load(imagepath)
 
 #Method to change name and variables
 func load_cardname():
 	print("loading blank Card!")
 
 #When picked, triggers (if any), then tells scouting table
-func _pressed() -> void:
+func pressed() -> void:
 	picked()
 	get_parent().scouting_pick(cardname)
 

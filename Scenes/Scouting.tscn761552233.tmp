@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdn2iuxqtllpw"]
+
+[ext_resource type="Script" uid="uid://e8sde2nguss2" path="res://Scripts/Tables/Scouting.gd" id="1_fnnib"]
+[ext_resource type="PackedScene" uid="uid://bpy35wt2x6ix8" path="res://Scenes/Card.tscn" id="1_xblmo"]
+
+[node name="Scouting" type="Node2D"]
+script = ExtResource("1_fnnib")
+
+[node name="Card1" parent="." instance=ExtResource("1_xblmo")]
+position = Vector2(243, 289)
+
+[node name="Card2" parent="." instance=ExtResource("1_xblmo")]
+position = Vector2(610, 290)
+
+[node name="Card3" parent="." instance=ExtResource("1_xblmo")]
+position = Vector2(954, 291)
+
+[node name="ShipButton" type="Button" parent="."]
+offset_left = 892.0
+offset_top = 519.0
+offset_right = 1036.0
+offset_bottom = 592.0
+tooltip_text = "Ships It"
+text = "Ship It"
+
+[connection signal="pressed" from="ShipButton" to="." method="ship"]

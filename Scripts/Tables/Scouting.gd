@@ -2,6 +2,7 @@ extends Node
 
 var picks = []
 var deck = []
+
 func _ready() -> void:
 	picks = []
 	deck = ["Goblin","Goblin","Goblin",
@@ -9,6 +10,7 @@ func _ready() -> void:
 	"Walking_Fungus","Walking_Fungus","Walking_Fungus"]
 	deck.shuffle()
 	draw_three()
+	print("ready")
 
 func draw_three():
 	draw($Card1)
@@ -23,7 +25,12 @@ func draw(child):
 		child.load_cardname()
 	else:
 		print("No cards")
+
 func scouting_pick(cardname):
 	picks.append(cardname)
 	print(picks)
 	draw_three()
+
+func smash():
+	get_parent().exit_scouting()
+	get_parent().enter_smashing()

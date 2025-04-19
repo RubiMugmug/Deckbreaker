@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://db7e2qsk6nly7"]
+
+[ext_resource type="PackedScene" uid="uid://cdn2iuxqtllpw" path="res://Scenes/Scouting.tscn" id="1_3tvtu"]
+[ext_resource type="Script" uid="uid://dvhxq7w6jb35r" path="res://Scripts/Table.gd" id="1_rv2kk"]
+[ext_resource type="PackedScene" uid="uid://d3sn81r5725cx" path="res://Scenes/Shopping.tscn" id="2_rv2kk"]
+[ext_resource type="PackedScene" uid="uid://pp7devs4c8js" path="res://Scenes/Smashing.tscn" id="3_2kndx"]
+
+[sub_resource type="Animation" id="Animation_rv2kk"]
+resource_name = "Entering"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1200, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2kndx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2kndx"]
+_data = {
+&"Entering": SubResource("Animation_rv2kk"),
+&"RESET": SubResource("Animation_2kndx")
+}
+
+[node name="Table" type="Node2D"]
+script = ExtResource("1_rv2kk")
+
+[node name="Scouting" parent="." instance=ExtResource("1_3tvtu")]
+
+[node name="Shopping" parent="." instance=ExtResource("2_rv2kk")]
+
+[node name="Smashing" parent="." instance=ExtResource("3_2kndx")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Scouting")
+libraries = {
+&"": SubResource("AnimationLibrary_2kndx")
+}
+autoplay = "Entering"

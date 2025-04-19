@@ -1,58 +1,147 @@
-[gd_scene load_steps=8 format=3 uid="uid://db7e2qsk6nly7"]
+[gd_scene load_steps=15 format=3 uid="uid://db7e2qsk6nly7"]
 
 [ext_resource type="PackedScene" uid="uid://cdn2iuxqtllpw" path="res://Scenes/Scouting.tscn" id="1_3tvtu"]
-[ext_resource type="Script" uid="uid://dvhxq7w6jb35r" path="res://Scripts/Table.gd" id="1_rv2kk"]
+[ext_resource type="Script" uid="uid://dvhxq7w6jb35r" path="res://Scripts/Tables/Table.gd" id="1_rv2kk"]
 [ext_resource type="PackedScene" uid="uid://d3sn81r5725cx" path="res://Scenes/Shopping.tscn" id="2_rv2kk"]
 [ext_resource type="PackedScene" uid="uid://pp7devs4c8js" path="res://Scenes/Smashing.tscn" id="3_2kndx"]
+[ext_resource type="Animation" uid="uid://dp10vdo4wujex" path="res://Animations/Scouting Enter.res" id="5_gf7yt"]
+[ext_resource type="Animation" uid="uid://um3dvokj4oda" path="res://Animations/Shopping Enter.res" id="6_n8uo3"]
+[ext_resource type="Animation" uid="uid://bml4d0gpg10uk" path="res://Animations/Smashing Enter.res" id="7_j0gky"]
 
-[sub_resource type="Animation" id="Animation_rv2kk"]
-resource_name = "Entering"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-1200, 0), Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_2kndx"]
+[sub_resource type="Animation" id="Animation_n8uo3"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("../Shopping:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(-1200, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2kndx"]
 _data = {
-&"Entering": SubResource("Animation_rv2kk"),
-&"RESET": SubResource("Animation_2kndx")
+&"RESET": SubResource("Animation_n8uo3"),
+&"Scouting Enter": ExtResource("5_gf7yt"),
+&"Shopping Enter": ExtResource("6_n8uo3"),
+&"Smashing Enter": ExtResource("7_j0gky")
+}
+
+[sub_resource type="Animation" id="Animation_gf7yt"]
+resource_name = "Scouting Exit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Scouting:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1200, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_j0gky"]
+resource_name = "Smashing Exit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Smashing:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1200, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_y052y"]
+resource_name = "Shopping Exit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shopping:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1200, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ja0wn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Scouting:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1200, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shopping:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1200, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Smashing:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1200, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ja0wn"]
+_data = {
+&"RESET": SubResource("Animation_ja0wn"),
+&"Scouting Exit": SubResource("Animation_gf7yt"),
+&"Shopping Exit": SubResource("Animation_y052y"),
+&"Smashing Exit": SubResource("Animation_j0gky")
 }
 
 [node name="Table" type="Node2D"]
 script = ExtResource("1_rv2kk")
 
 [node name="Scouting" parent="." instance=ExtResource("1_3tvtu")]
+position = Vector2(-1200, 0)
 
 [node name="Shopping" parent="." instance=ExtResource("2_rv2kk")]
+position = Vector2(-1200, 0)
 
 [node name="Smashing" parent="." instance=ExtResource("3_2kndx")]
+position = Vector2(1200, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="Table_Enter" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Scouting")
 libraries = {
 &"": SubResource("AnimationLibrary_2kndx")
 }
-autoplay = "Entering"
+
+[node name="Table_Exit" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ja0wn")
+}

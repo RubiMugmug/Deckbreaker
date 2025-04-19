@@ -31,6 +31,10 @@ func scouting_pick(cardname):
 	print(picks)
 	draw_three()
 
-func smash():
-	get_parent().exit_scouting()
+func go_smash():
+	print("Smash")
 	get_parent().enter_smashing()
+	get_parent().exit_scouting()
+
+func go_scout() -> void:
+	pass # Replace with function body.

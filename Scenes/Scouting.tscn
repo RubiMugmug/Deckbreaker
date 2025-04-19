@@ -23,4 +23,4 @@ offset_bottom = 592.0
 tooltip_text = "Ships It"
 text = "Ship It"
 
-[connection signal="pressed" from="SmashButton" to="." method="smash"]
+[connection signal="pressed" from="SmashButton" to="." method="go_smash"]

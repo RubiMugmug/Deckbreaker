@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://d3sn81r5725cx"]
+[gd_scene load_steps=2 format=3 uid="uid://d3sn81r5725cx"]
+
+[ext_resource type="Script" uid="uid://dbbe8dove56gd" path="res://Scripts/Tables/Shopping.gd" id="1_8ourw"]
 
 [node name="Shopping" type="Node2D"]
+script = ExtResource("1_8ourw")
+
+[node name="Scout" type="Button" parent="."]
+offset_left = 513.0
+offset_top = 493.0
+offset_right = 658.0
+offset_bottom = 607.0
+text = "Go to Scouting"
+
+[connection signal="pressed" from="Scout" to="." method="go_scout"]
